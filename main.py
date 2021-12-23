@@ -15,7 +15,7 @@ class Game:
         self.fps=60
         self.player=Player(self.swidth,self.sheight,self.screen)
         self.joystick1=Joystick(self.swidth,self.sheight,self.screen,(200,550),radius=150,colour='Purple')
-        self.joystick2=Joystick(self.swidth,self.sheight,self.screen,(800,550),radius=150,colour='Purple')
+        self.joystick2=Joystick(self.swidth,self.sheight,self.screen,(800,550),auto_center=False,radius=150,colour='Purple')
 
     def main(self):
         while self.rng:
@@ -41,9 +41,9 @@ class Game:
             self.player.physics(phasor2,phasor1,dt)
 
             #Draw the objects on the screen
+            self.player.draw()
             self.joystick1.draw()
             self.joystick2.draw()
-            self.player.draw()
 
             if self.rng:
                 pg.display.update()

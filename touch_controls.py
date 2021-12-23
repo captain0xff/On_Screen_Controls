@@ -82,7 +82,7 @@ class Joystick:
             if threshold>1:
                 threshold=1
             self.phasor=relative_finger_pos*(threshold/relative_finger_length)
-        else:
+        elif self.auto_center is True:
             self.phasor=pg.math.Vector2(0,0)
 
     def get_properties(self):
@@ -110,7 +110,6 @@ class Joystick:
             if ev.finger_id==self.binding_finger_id:
                 if self.auto_center:
                     self.binding_finger_id=None
-                    self.finger_pos=None
                     self.stick_colour=self.stick_colour_before_bind
                     self.stick_pos=self.center_pos
                 else:

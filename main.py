@@ -6,7 +6,6 @@ from touch_controls import Button
 class Game:
     def __init__(self):
         pg.init()
-        info=pg.display.Info()
         self.swidth=1024
         self.sheight=768
         self.screen=pg.display.set_mode((self.swidth,self.sheight),pg.SCALED|pg.FULLSCREEN)
